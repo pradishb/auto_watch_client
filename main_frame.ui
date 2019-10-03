@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface>
+  <object class="tk.Frame" id="main_frame">
+    <property name="height">200</property>
+    <property name="width">200</property>
+    <layout>
+      <property name="column">0</property>
+      <property name="propagate">True</property>
+      <property name="row">0</property>
+    </layout>
+    <child>
+      <object class="tk.LabelFrame" id="tasks">
+        <property name="height">400</property>
+        <property name="text" translatable="yes">Tasks</property>
+        <property name="width">300</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="ipadx">5</property>
+          <property name="ipady">5</property>
+          <property name="padx">5</property>
+          <property name="pady">5</property>
+          <property name="propagate">False</property>
+          <property name="row">0</property>
+          <property name="sticky">nw</property>
+          <rows>
+            <row id="0">
+              <property name="pad">5</property>
+            </row>
+            <row id="1">
+              <property name="pad">5</property>
+            </row>
+            <row id="2">
+              <property name="pad">5</property>
+            </row>
+          </rows>
+          <columns>
+            <column id="0">
+              <property name="pad">5</property>
+            </column>
+            <column id="1">
+              <property name="pad">5</property>
+            </column>
+            <column id="2">
+              <property name="pad">5</property>
+            </column>
+          </columns>
+        </layout>
+        <child>
+          <object class="ttk.Checkbutton" id="start_worlds_mission">
+            <property name="text" translatable="yes">Start worlds mission</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="columnspan">3</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="start">
+            <property name="command">start</property>
+            <property name="text" translatable="yes">Start</property>
+            <property name="width">10</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="padx">5</property>
+              <property name="pady">5</property>
+              <property name="propagate">False</property>
+              <property name="row">1</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="import_csv">
+            <property name="command">import_csv</property>
+            <property name="text" translatable="yes">Import Csv</property>
+            <property name="width">10</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="padx">5</property>
+              <property name="pady">5</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="export_csv">
+            <property name="command">export_csv</property>
+            <property name="text" translatable="yes">Export Csv</property>
+            <property name="width">10</property>
+            <layout>
+              <property name="column">2</property>
+              <property name="padx">5</property>
+              <property name="pady">5</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Progressbar" id="progress">
+            <property name="length">290</property>
+            <property name="orient">horizontal</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="columnspan">3</property>
+              <property name="padx">5</property>
+              <property name="pady">5</property>
+              <property name="propagate">True</property>
+              <property name="row">2</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="tk.LabelFrame" id="accounts_frame">
+        <property name="height">400</property>
+        <property name="text" translatable="yes">Accounts</property>
+        <property name="width">438</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="ipadx">5</property>
+          <property name="ipady">5</property>
+          <property name="padx">5</property>
+          <property name="pady">5</property>
+          <property name="propagate">False</property>
+          <property name="row">0</property>
+          <property name="sticky">nw</property>
+        </layout>
+        <child>
+          <object class="ttk.Treeview" id="accounts">
+            <property name="height">17</property>
+            <property name="padding">0</property>
+            <property name="selectmode">extended</property>
+            <property name="show">headings</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="padx">5</property>
+              <property name="pady">5</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+              <property name="sticky">w</property>
+            </layout>
+            <child>
+              <object class="ttk.Treeview.Column" id="Column_1">
+                <property name="column_anchor">w</property>
+                <property name="heading_anchor">w</property>
+                <property name="minwidth">20</property>
+                <property name="stretch">true</property>
+                <property name="text" translatable="yes">Username</property>
+                <property name="tree_column">false</property>
+                <property name="visible">true</property>
+                <property name="width">100</property>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Treeview.Column" id="Column_2">
+                <property name="column_anchor">w</property>
+                <property name="heading_anchor">w</property>
+                <property name="minwidth">20</property>
+                <property name="stretch">true</property>
+                <property name="text" translatable="yes">Password</property>
+                <property name="tree_column">false</property>
+                <property name="visible">true</property>
+                <property name="width">131</property>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Treeview.Column" id="Column_3">
+                <property name="column_anchor">w</property>
+                <property name="heading_anchor">w</property>
+                <property name="minwidth">20</property>
+                <property name="stretch">true</property>
+                <property name="text" translatable="yes">Worlds mission started</property>
+                <property name="tree_column">false</property>
+                <property name="visible">true</property>
+                <property name="width">197</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="tk.LabelFrame" id="console_frame">
+        <property name="height">200</property>
+        <property name="text" translatable="yes">Console</property>
+        <property name="width">760</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="columnspan">2</property>
+          <property name="ipadx">5</property>
+          <property name="ipady">5</property>
+          <property name="padx">5</property>
+          <property name="pady">5</property>
+          <property name="propagate">False</property>
+          <property name="row">2</property>
+          <property name="sticky">nw</property>
+        </layout>
+        <child>
+          <object class="tk.Text" id="console">
+            <property name="height">10</property>
+            <property name="insertofftime">0</property>
+            <property name="width">92</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="ipadx">5</property>
+              <property name="ipady">5</property>
+              <property name="padx">5</property>
+              <property name="pady">5</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
