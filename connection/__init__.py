@@ -31,3 +31,7 @@ class Connection:
     def put(self, url, *args, **kwargs):
         ''' Wrapper around requests put method '''
         return requests.put('{}{}'.format(self.url, url), *args, **kwargs, **self.kwargs)
+
+    def delete(self, url, *args, **kwargs):
+        ''' Wrapper around requests delete method '''
+        return requests.delete('{}{}'.format(self.url, url), *args, **kwargs, **self.kwargs)
