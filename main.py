@@ -50,17 +50,17 @@ class Application:
         self.builder = builder = pygubu.Builder()
         self.builder.add_from_file('main_frame.ui')
         self.mainwindow = builder.get_object('main_frame', master)
-        self.master.protocol("WM_DELETE_WINDOW", self.on_closing)
+        # self.master.protocol("WM_DELETE_WINDOW", self.on_closing)
         self.builder.connect_callbacks(self)
         self.init_checkboxes()
 
         self.macro = Macro(RiotConnection(), LeagueConnection())
 
-    def on_closing(self):
-        ''' Kills the game processes when closing '''
-        kill_process(LEAGUE_CLIENT_PROCESS)
-        kill_process(RIOT_CLIENT_PROCESS)
-        self.master.destroy()
+    # def on_closing(self):
+    #     ''' Kills the game processes when closing '''
+    #     kill_process(LEAGUE_CLIENT_PROCESS)
+    #     kill_process(RIOT_CLIENT_PROCESS)
+    #     self.master.destroy()
 
     def init_checkboxes(self):
         ''' Checks all the checkboxes at the start '''
