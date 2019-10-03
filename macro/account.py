@@ -13,6 +13,8 @@ def check_session(connection):
     ''' Checks the session of an account '''
     res = connection.get('/lol-login/v1/session')
     res_json = res.json()
+    if 'isNewPlayer' not in res_json:
+        return 'succeed'
     if res_json['isNewPlayer']:
         return 'new_player'
     if res_json['state'] == 'ERROR':
