@@ -1,5 +1,8 @@
 ''' Configuration file for the program '''
 
+REGION = 'EUW'
+LOCALE = 'en_GB'
+
 RIOT_CLIENT_SERVICES_PATH = 'D:/Games/Riot Games/Riot Client/RiotClientServices.exe'
 LEAGUE_CLIENT_PATH = 'D:/Games/League of Legends/LeagueClient.exe'
 LEAGUE_CLIENT_PROCESS = 'LeagueClient.exe'

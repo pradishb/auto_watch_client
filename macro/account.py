@@ -2,7 +2,7 @@
 import logging
 
 from process import kill_process
-from settings import LEAGUE_CLIENT_PROCESS
+from settings import LEAGUE_CLIENT_PROCESS, REGION, LOCALE
 
 from .exceptions import (AccountBannedException,
                          AuthenticationFailureException, BadUsernameException,
@@ -42,6 +42,9 @@ def login(connection, username, password):
     ''' Logs in to the client '''
     logging.info(
         'Logging in, Username: %s, Password: %s', username, password)
+
+    connection.put('/riotclient/region-locale',
+                   json={'region': REGION, 'locale': LOCALE, })
     res = connection.post(
         '/rso-auth/v2/authorizations',
         json={'clientId': 'riot-client', 'trustLevels': ['always_trusted']})
