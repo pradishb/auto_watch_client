@@ -57,14 +57,14 @@ class Macro:
         ''' Starts the worlds mission if exists '''
         res = self.league_connection.get('/lol-missions/v1/series')
         res_json = res.json()
-        worlds = list(filter(lambda m: m['id'] == 'c70dfb10-dbd5-11e9-b83f-027848ddb81d', res_json))
+        worlds = list(filter(lambda m: m['internalName'] == 'Worlds2019B_series', res_json))
         if worlds == []:
             return
         if worlds[0]['status'] == 'PENDING':
             logging.info('Starting worlds mission')
             self.league_connection.put(
                 '/lol-missions/v2/player/opt',
-                json={"seriesId": "c70dfb10-dbd5-11e9-b83f-027848ddb81d", "option": "OPT_IN"})
+                json={"seriesId": worlds[0]['id'], "option": "OPT_IN"})
             return
         self.options = self.options[1:]
 
